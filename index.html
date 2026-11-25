@@ -1,0 +1,1058 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>wow窝窝炮 - 城市快乐能量站,让每一次相聚都炸裂</title>
+<meta name="description" content="wow窝窝炮是城市青年快乐能量品牌，专注线下聚会场景，提供创意炮节、城市夜游、社群共创与周边产品，让每一场相聚都充满惊喜与活力。">
+<meta name="keywords" content="wow窝窝炮,快乐能量,城市聚会,社群共创,创意活动,青年文化">
+<style>
+:root{
+  --ink:#13131a;
+  --ink-soft:#2a2a35;
+  --paper:#fffaf2;
+  --paper-2:#fff1dd;
+  --hot:#ff4d3d;
+  --hot-deep:#e42f1f;
+  --sun:#ffc93c;
+  --mint:#26c2a3;
+  --violet:#7357ff;
+  --sky:#4aa8ff;
+  --line:rgba(19,19,26,.10);
+  --shadow:0 18px 50px -22px rgba(19,19,26,.35);
+  --radius:22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+::selection{background:var(--sun);color:var(--ink)}
+
+/* ---------- top bar ---------- */
+.topbar{
+  background:linear-gradient(90deg,var(--hot),#ff7a2f 40%,var(--sun));
+  color:#2a1600;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:.4px;
+  position:relative;
+  overflow:hidden;
+}
+.topbar-inner{
+  max-width:1240px;margin:0 auto;padding:8px 22px;
+  display:flex;align-items:center;gap:18px;justify-content:space-between;
+}
+.topbar marquee{flex:1;max-width:640px}
+.topbar .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#2a1600;margin-right:8px;animation:pulse 1.4s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.7)}}
+
+/* ---------- header ---------- */
+header.site-head{
+  position:sticky;top:0;z-index:60;
+  backdrop-filter:blur(14px);
+  background:rgba(255,250,242,.82);
+  border-bottom:1px solid var(--line);
+  transition:box-shadow .3s;
+}
+.site-head.scrolled{box-shadow:0 10px 40px -24px rgba(19,19,26,.5)}
+.nav-wrap{max-width:1240px;margin:0 auto;padding:0 22px;display:flex;align-items:center;justify-content:space-between;height:76px;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.brand-mark{
+  width:46px;height:46px;border-radius:14px;
+  background:radial-gradient(circle at 30% 25%,var(--sun),var(--hot) 70%);
+  display:grid;place-items:center;font-weight:900;font-size:17px;color:#fff;
+  box-shadow:0 8px 22px -10px var(--hot);
+  position:relative;overflow:hidden;
+}
+.brand-mark::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(255,255,255,.5),transparent 55%);}
+.brand-text{line-height:1.15}
+.brand-text b{display:block;font-size:19px;letter-spacing:.5px}
+.brand-text span{font-size:11px;letter-spacing:3px;color:var(--hot-deep);font-weight:700}
+nav.main-nav{display:flex;gap:6px;align-items:center}
+nav.main-nav a{
+  padding:9px 15px;border-radius:999px;font-size:14.5px;font-weight:600;color:var(--ink-soft);
+  transition:.25s;position:relative;
+}
+nav.main-nav a:hover{background:var(--paper-2);color:var(--hot-deep);transform:translateY(-1px)}
+.nav-cta{
+  background:var(--ink);color:#fff !important;border-radius:999px;padding:10px 22px !important;
+  font-weight:700;box-shadow:0 10px 24px -12px rgba(19,19,26,.7);transition:.25s;
+}
+.nav-cta:hover{background:var(--hot);color:#fff !important;transform:translateY(-2px) scale(1.02)}
+.burger{display:none;width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:#fff;position:relative}
+.burger span{position:absolute;left:12px;right:12px;height:2px;background:var(--ink);border-radius:2px;transition:.3s}
+.burger span:nth-child(1){top:15px}
+.burger span:nth-child(2){top:21px}
+.burger span:nth-child(3){top:27px}
+.burger.open span:nth-child(1){top:21px;transform:rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){top:21px;transform:rotate(-45deg)}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  padding:86px 0 0;
+  background:
+    radial-gradient(1200px 500px at 85% -10%,rgba(255,201,60,.35),transparent 60%),
+    radial-gradient(900px 480px at 8% 10%,rgba(255,77,61,.16),transparent 60%),
+    linear-gradient(180deg,var(--paper) 0%,var(--paper-2) 100%);
+}
+.hero-inner{max-width:1240px;margin:0 auto;padding:0 22px;position:relative;z-index:2}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:40px;align-items:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;
+  background:#fff;border:1px solid var(--line);border-radius:999px;
+  padding:7px 16px;font-size:13px;font-weight:700;color:var(--hot-deep);
+  box-shadow:0 8px 20px -16px rgba(19,19,26,.5);
+}
+.eyebrow .spark{width:9px;height:9px;border-radius:50%;background:var(--hot);box-shadow:0 0 0 4px rgba(255,77,61,.18)}
+h1{
+  font-size:clamp(46px,7vw,88px);
+  line-height:1.02;
+  letter-spacing:-1.5px;
+  margin:20px 0 4px;
+  font-weight:900;
+}
+h1 .grad{
+  background:linear-gradient(100deg,var(--hot) 10%,#ff8a2f 45%,var(--sun) 90%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero-sub{
+  font-size:clamp(17px,2vw,21px);color:var(--ink-soft);font-weight:600;margin-top:18px;max-width:520px;
+}
+.hero-lead{color:#55525f;font-size:15.5px;margin-top:16px;max-width:520px}
+.hero-actions{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:15px 30px;border-radius:999px;font-weight:800;font-size:15.5px;border:2px solid transparent;
+  transition:.28s cubic-bezier(.2,.8,.3,1);
+}
+.btn-primary{background:var(--hot);color:#fff;box-shadow:0 18px 40px -18px var(--hot)}
+.btn-primary:hover{background:var(--hot-deep);transform:translateY(-3px);box-shadow:0 24px 48px -18px var(--hot-deep)}
+.btn-ghost{background:#fff;border-color:var(--ink);color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:#fff;transform:translateY(-3px)}
+.hero-stats{display:flex;gap:34px;margin-top:44px;flex-wrap:wrap}
+.stat b{display:block;font-size:32px;font-weight:900;letter-spacing:-1px;line-height:1.1}
+.stat b em{font-style:normal;color:var(--hot);font-size:20px}
+.stat span{font-size:13px;color:#6b6776;font-weight:600}
+
+/* hero visual */
+.hero-visual{position:relative;min-height:430px;display:grid;place-items:center}
+.orbit{
+  position:absolute;inset:0;border-radius:50%;
+  border:1.5px dashed rgba(255,77,61,.35);
+  animation:spin 26s linear infinite;
+}
+.orbit.two{inset:34px;border-color:rgba(115,87,255,.28);animation-duration:38s;animation-direction:reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.bubble-card{
+  position:relative;z-index:3;
+  width:min(100%,360px);aspect-ratio:1/1;border-radius:38px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  background:linear-gradient(150deg,#fff 0%,#ffe9c9 100%);
+  display:grid;place-items:center;
+  transform:rotate(-3deg);
+  transition:.5s;
+}
+.bubble-card:hover{transform:rotate(0) scale(1.02)}
+.bubble-card .ring{position:absolute;border-radius:50%;border:2px solid rgba(255,77,61,.5)}
+.bubble-card .ring.r1{inset:18px;animation:pulseRing 4s ease-in-out infinite}
+.bubble-card .ring.r2{inset:46px;border-color:rgba(255,201,60,.7);animation:pulseRing 4s ease-in-out .8s infinite}
+@keyframes pulseRing{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.06);opacity:.5}}
+.bubble-card .core{
+  width:150px;height:150px;border-radius:50%;
+  background:radial-gradient(circle at 32% 30%,#fff,var(--sun) 35%,var(--hot) 78%);
+  display:grid;place-items:center;font-size:44px;font-weight:900;color:#fff;
+  text-shadow:0 4px 14px rgba(228,47,31,.5);
+  box-shadow:0 20px 45px -14px var(--hot);
+  animation:float 5s ease-in-out infinite;
+}
+@keyframes float{0%,100%{transform:translateY(-8px)}50%{transform:translateY(8px)}}
+.chip{
+  position:absolute;background:#fff;border-radius:14px;padding:9px 14px;font-size:13px;font-weight:800;
+  box-shadow:0 14px 34px -18px rgba(19,19,26,.5);z-index:4;border:1px solid var(--line);
+}
+.chip.c1{top:6%;left:-2%;color:var(--violet);transform:rotate(-5deg)}
+.chip.c2{bottom:10%;right:-2%;color:var(--mint);transform:rotate(4deg)}
+.chip.c3{bottom:32%;left:-6%;color:var(--hot-deep);transform:rotate(-2deg)}
+.hero-wave{display:block;width:100%;height:auto;margin-top:40px}
+
+/* ---------- marquee strip ---------- */
+.strip{
+  background:var(--ink);color:var(--paper);padding:20px 0;overflow:hidden;
+  transform:rotate(-.6deg) scale(1.02);margin:-6px 0 0;
+}
+.strip .track{display:flex;gap:44px;white-space:nowrap;animation:slide 26s linear infinite;width:max-content}
+.strip .track span{font-size:17px;font-weight:800;letter-spacing:2px;opacity:.92;display:flex;align-items:center;gap:44px}
+.strip .track span::after{content:"✦";color:var(--sun);font-size:14px;letter-spacing:0}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ---------- generic section ---------- */
+section{position:relative}
+.wrap{max-width:1240px;margin:0 auto;padding:0 22px}
+.sec{padding:96px 0}
+.sec-head{max-width:760px;margin-bottom:48px}
+.kicker{
+  display:inline-block;font-size:12.5px;font-weight:800;letter-spacing:4px;color:var(--hot-deep);
+  background:rgba(255,77,61,.1);padding:6px 14px;border-radius:999px;margin-bottom:16px;
+}
+.sec-head h2{font-size:clamp(30px,4.4vw,50px);line-height:1.15;font-weight:900;letter-spacing:-1px}
+.sec-head p{color:#5d596a;margin-top:16px;font-size:16px;max-width:640px}
+
+/* ---------- features ---------- */
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;
+  transition:.35s cubic-bezier(.2,.8,.3,1);position:relative;overflow:hidden;
+}
+.card::before{
+  content:"";position:absolute;inset:0;opacity:0;transition:.35s;
+  background:radial-gradient(360px 200px at 20% 0%,rgba(255,201,60,.22),transparent 70%);
+}
+.card:hover{transform:translateY(-8px);box-shadow:var(--shadow);border-color:transparent}
+.card:hover::before{opacity:1}
+.card-ico{
+  width:54px;height:54px;border-radius:16px;display:grid;place-items:center;font-size:25px;
+  margin-bottom:18px;position:relative;z-index:1;
+}
+.ico-hot{background:rgba(255,77,61,.13);color:var(--hot-deep)}
+.ico-sun{background:rgba(255,201,60,.22);color:#a06a00}
+.ico-mint{background:rgba(38,194,163,.15);color:#0e8b72}
+.ico-violet{background:rgba(115,87,255,.14);color:var(--violet)}
+.ico-sky{background:rgba(74,168,255,.15);color:#1468b8}
+.ico-ink{background:rgba(19,19,26,.09);color:var(--ink)}
+.card h3{font-size:19.5px;font-weight:800;margin-bottom:9px;position:relative;z-index:1}
+.card p{font-size:14.5px;color:#615d6d;position:relative;z-index:1}
+.card .tagline{margin-top:16px;font-size:12.5px;font-weight:800;letter-spacing:1px;color:var(--hot-deep);position:relative;z-index:1}
+
+/* ---------- scene / timeline ---------- */
+.scene{background:linear-gradient(180deg,#fff 0%,var(--paper-2) 100%);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.scene-list{display:grid;gap:18px}
+.scene-row{
+  display:grid;grid-template-columns:120px 1fr;gap:26px;align-items:start;
+  background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px 28px;
+  transition:.3s;
+}
+.scene-row:hover{border-color:rgba(255,77,61,.4);box-shadow:0 18px 44px -30px rgba(19,19,26,.6);transform:translateX(4px)}
+.scene-num{
+  font-size:44px;font-weight:900;letter-spacing:-2px;line-height:1;color:transparent;
+  -webkit-text-stroke:1.5px var(--hot);
+}
+.scene-body h4{font-size:20px;font-weight:800;margin-bottom:6px}
+.scene-body p{font-size:14.5px;color:#615d6d}
+.scene-body .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.meta span{font-size:12px;font-weight:700;background:var(--paper-2);color:#8a5a00;padding:5px 12px;border-radius:999px}
+
+/* ---------- gallery ---------- */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:180px;gap:16px}
+.g-item{
+  border-radius:20px;overflow:hidden;position:relative;display:grid;place-items:center;
+  color:#fff;font-weight:900;font-size:18px;letter-spacing:1px;transition:.4s;cursor:pointer;
+}
+.g-item:hover{transform:scale(.97);box-shadow:var(--shadow)}
+.g-item svg{position:absolute;inset:0;width:100%;height:100%}
+.g-item span{position:relative;z-index:2;text-shadow:0 2px 12px rgba(0,0,0,.35)}
+.g-item.tall{grid-row:span 2}
+.g-item.wide{grid-column:span 2}
+.g1{background:linear-gradient(140deg,#ff4d3d,#ff9f45)}
+.g2{background:linear-gradient(140deg,#7357ff,#26c2a3)}
+.g3{background:linear-gradient(140deg,#ffc93c,#ff7a2f)}
+.g4{background:linear-gradient(140deg,#4aa8ff,#7357ff)}
+.g5{background:linear-gradient(140deg,#26c2a3,#4aa8ff)}
+.g6{background:linear-gradient(140deg,#13131a,#4a4a5e)}
+.g7{background:linear-gradient(140deg,#ff7a2f,#ffc93c)}
+
+/* ---------- numbers ---------- */
+.numbers{background:var(--ink);color:var(--paper);border-radius:0;position:relative;overflow:hidden}
+.numbers::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(700px 300px at 80% 20%,rgba(255,77,61,.28),transparent 60%),
+             radial-gradient(600px 300px at 10% 90%,rgba(255,201,60,.16),transparent 60%);
+}
+.numbers .wrap{position:relative;z-index:2}
+.num-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:20px}
+.num-cell{border-left:2px solid rgba(255,255,255,.14);padding-left:22px}
+.num-cell b{font-size:clamp(34px,4.6vw,54px);font-weight:900;display:block;letter-spacing:-2px;line-height:1.1}
+.num-cell b em{font-style:normal;font-size:.5em;color:var(--sun);margin-left:4px}
+.num-cell span{font-size:14px;color:rgba(255,250,242,.66);font-weight:600}
+
+/* ---------- voices ---------- */
+.voices{background:var(--paper)}
+.voice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.voice{
+  background:#fff;border-radius:20px;padding:28px;border:1px solid var(--line);
+  display:flex;flex-direction:column;gap:16px;transition:.3s;position:relative;
+}
+.voice:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.voice .quote{font-size:15px;color:#3d3a48;line-height:1.85;flex:1}
+.voice .quote::before{content:"“";font-size:40px;line-height:0;color:var(--hot);vertical-align:-10px;margin-right:4px;font-family:Georgia,serif}
+.voice .who{display:flex;align-items:center;gap:12px}
+.avatar{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-weight:900;color:#fff;font-size:15px;flex-shrink:0}
+.who b{display:block;font-size:14.5px}
+.who small{font-size:12px;color:#8b8797}
+
+/* ---------- join / form ---------- */
+.join{background:linear-gradient(150deg,var(--paper-2) 0%,#ffe4bd 100%);border-top:1px solid var(--line)}
+.join-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:44px;align-items:start}
+.join h2{font-size:clamp(30px,4.2vw,46px);font-weight:900;line-height:1.15;letter-spacing:-1px}
+.join p.lead{color:#5d596a;margin-top:16px;font-size:15.5px}
+.join-perks{list-style:none;margin-top:26px;display:grid;gap:12px}
+.join-perks li{display:flex;gap:12px;align-items:flex-start;font-size:14.5px;font-weight:600;color:#3d3a48}
+.check{width:22px;height:22px;border-radius:50%;background:var(--mint);color:#fff;display:grid;place-items:center;font-size:12px;flex-shrink:0;margin-top:2px}
+form.join-form{
+  background:#fff;border-radius:26px;padding:32px;box-shadow:var(--shadow);border:1px solid rgba(255,77,61,.14);
+}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}
+.field label{font-size:13px;font-weight:800;color:var(--ink-soft);letter-spacing:.5px}
+.field input,.field select,.field textarea{
+  font-family:inherit;font-size:14.5px;padding:13px 15px;border-radius:13px;border:1.5px solid #e8e2d8;
+  background:#fffdf9;color:var(--ink);transition:.22s;width:100%;
+}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--hot);box-shadow:0 0 0 4px rgba(255,77,61,.13)}
+.field textarea{resize:vertical;min-height:88px}
+.submit-btn{
+  width:100%;padding:16px;border-radius:14px;border:none;background:var(--ink);color:#fff;
+  font-weight:900;font-size:16px;letter-spacing:1px;transition:.28s;
+}
+.submit-btn:hover{background:var(--hot);transform:translateY(-2px);box-shadow:0 18px 34px -18px var(--hot)}
+.form-note{font-size:12px;color:#8b8797;margin-top:12px;text-align:center}
+.form-ok{
+  display:none;margin-top:14px;padding:13px 16px;border-radius:12px;background:rgba(38,194,163,.14);
+  color:#0e7d68;font-size:13.5px;font-weight:700;text-align:center;
+}
+.form-ok.show{display:block;animation:fadeUp .4s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* ---------- faq ---------- */
+.faq-list{display:grid;gap:12px;max-width:860px}
+.faq-item{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.25s}
+.faq-item.open{border-color:rgba(255,77,61,.42);box-shadow:0 14px 38px -30px rgba(19,19,26,.7)}
+.faq-q{
+  width:100%;text-align:left;background:none;border:none;padding:20px 24px;
+  font-size:16px;font-weight:800;display:flex;justify-content:space-between;align-items:center;gap:16px;color:var(--ink);
+}
+.faq-q .plus{font-size:22px;font-weight:400;color:var(--hot);transition:.3s;flex-shrink:0;line-height:1}
+.faq-item.open .plus{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-a p{padding:0 24px 22px;font-size:14.5px;color:#5d596a}
+
+/* ---------- footer ---------- */
+footer{background:var(--ink);color:rgba(255,250,242,.72);padding:64px 0 26px;position:relative;overflow:hidden}
+footer::before{content:"";position:absolute;top:-1px;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--hot),var(--sun),var(--mint),var(--violet))}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:36px}
+.foot-brand .brand-text b{color:#fff}
+.foot-brand .brand-text span{color:var(--sun)}
+.foot-brand p{font-size:13.5px;margin-top:16px;color:rgba(255,250,242,.6);max-width:300px;line-height:1.8}
+.foot-social{display:flex;gap:10px;margin-top:20px}
+.foot-social a{
+  width:38px;height:38px;border-radius:11px;background:rgba(255,255,255,.08);display:grid;place-items:center;
+  font-size:14px;font-weight:800;transition:.25s;color:#fff;
+}
+.foot-social a:hover{background:var(--hot);transform:translateY(-3px)}
+.foot-col h5{color:#fff;font-size:14px;font-weight:800;letter-spacing:1px;margin-bottom:16px}
+.foot-col ul{list-style:none;display:grid;gap:10px}
+.foot-col a{font-size:13.5px;transition:.2s}
+.foot-col a:hover{color:var(--sun);padding-left:3px}
+.foot-bottom{
+  max-width:1240px;margin:48px auto 0;padding:22px 22px 0;border-top:1px solid rgba(255,255,255,.1);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12.5px;color:rgba(255,250,242,.5);
+}
+
+/* ---------- floating ---------- */
+.back-top{
+  position:fixed;right:22px;bottom:26px;width:48px;height:48px;border-radius:14px;border:none;
+  background:var(--ink);color:#fff;font-size:18px;box-shadow:0 14px 30px -12px rgba(19,19,26,.7);
+  opacity:0;visibility:hidden;transform:translateY(12px);transition:.3s;z-index:70;
+}
+.back-top.show{opacity:1;visibility:visible;transform:none}
+.back-top:hover{background:var(--hot)}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.3,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- responsive ---------- */
+@media(max-width:1040px){
+  .hero-grid{grid-template-columns:1fr;gap:30px}
+  .hero-visual{min-height:360px;margin-top:10px}
+  .feat-grid{grid-template-columns:repeat(2,1fr)}
+  .num-grid{grid-template-columns:repeat(2,1fr);gap:30px 24px}
+  .voice-grid{grid-template-columns:1fr 1fr}
+  .gallery{grid-template-columns:repeat(3,1fr)}
+  .join-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:760px){
+  nav.main-nav{
+    position:fixed;top:0;right:0;bottom:0;width:78%;max-width:320px;background:#fff;
+    flex-direction:column;align-items:stretch;padding:96px 22px 30px;gap:6px;
+    box-shadow:-20px 0 60px -30px rgba(0,0,0,.4);transform:translateX(105%);transition:.35s;z-index:80;
+  }
+  nav.main-nav.open{transform:none}
+  nav.main-nav a{padding:14px 16px;font-size:16px;border-radius:12px}
+  .nav-cta{text-align:center;margin-top:8px}
+  .burger{display:block;z-index:90}
+  .topbar-inner{font-size:11.5px}
+  .hero{padding-top:56px}
+  .sec{padding:64px 0}
+  .feat-grid,.voice-grid{grid-template-columns:1fr}
+  .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}
+  .scene-row{grid-template-columns:1fr;gap:10px}
+  .form-row{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .hero-stats{gap:22px}
+  .stat b{font-size:26px}
+  .num-grid{grid-template-columns:1fr 1fr}
+  .bubble-card{width:min(100%,300px)}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- top announcement -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <marquee behavior="scroll" direction="left" scrollamount="3" onmouseover="this.stop()" onmouseout="this.start()">
+      <span class="dot"></span>2025 窝窝炮城市巡回 · 春季场火热报名中　|　新会员注册即得「快乐能量包」　|　每周五晚 8 点线上共创直播间见
+    </marquee>
+  </div>
+</div>
+
+<!-- header -->
+<header class="site-head" id="siteHead">
+  <div class="nav-wrap">
+    <a class="brand" href="#top" aria-label="wow窝窝炮首页">
+      <div class="brand-mark">窝</div>
+      <div class="brand-text">
+        <b>wow窝窝炮</b>
+        <span>HAPPY ENERGY</span>
+      </div>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="#about">品牌故事</a>
+      <a href="#features">核心玩法</a>
+      <a href="#scenes">活动场景</a>
+      <a href="#gallery">现场图集</a>
+      <a href="#voices">用户声音</a>
+      <a href="#faq">常见问题</a>
+      <a href="#join" class="nav-cta">立即加入</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="打开菜单">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- hero -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow"><i class="spark"></i>城市快乐能量站 · 已陪伴 12 万+ 年轻人</span>
+        <h1><span class="grad">wow窝窝炮</span></h1>
+        <p class="hero-sub">让每一次相聚，都炸裂出惊喜。</p>
+        <p class="hero-lead">
+          我们不做无聊的聚会。wow窝窝炮把创意炮节、城市夜游、社群共创和周边好物装进同一个能量场，
+          让陌生人变成搭子，让周末变成故事，让「在一起」这件事重新变得好玩。
+        </p>
+        <div class="hero-actions">
+          <a href="#join" class="btn btn-primary">报名下一场 ⚡</a>
+          <a href="#scenes" class="btn btn-ghost">看看怎么玩</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><b>128<em>k</em></b><span>累计参与人次</span></div>
+          <div class="stat"><b>36<em>座</em></b><span>已点亮城市</span></div>
+          <div class="stat"><b>4.9<em>分</em></b><span>场均满意度</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="orbit"></div>
+        <div class="orbit two"></div>
+        <div class="bubble-card">
+          <div class="ring r1"></div>
+          <div class="ring r2"></div>
+          <div class="core">WOW</div>
+        </div>
+        <div class="chip c1">🔥 一炮而红</div>
+        <div class="chip c2">🎈 快乐加倍</div>
+        <div class="chip c3">🎉 城市限定</div>
+      </div>
+    </div>
+  </div>
+  <svg class="hero-wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,50 C240,95 420,5 720,38 C1010,70 1220,20 1440,44 L1440,90 L0,90 Z" fill="#13131a"/>
+  </svg>
+</section>
+
+<!-- strip -->
+<div class="strip" aria-hidden="true">
+  <div class="track">
+    <span>创意炮节 城市夜游 社群共创 快乐周边 主题快闪 周末出逃 搭子文化 能量补给</span>
+    <span>创意炮节 城市夜游 社群共创 快乐周边 主题快闪 周末出逃 搭子文化 能量补给</span>
+  </div>
+</div>
+
+<!-- about / features -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">BRAND STORY</span>
+      <h2>我们相信，快乐是一种可以设计出来的能量</h2>
+      <p>
+        wow窝窝炮诞生于一次「周末太无聊」的共同吐槽。几个做活动、做设计、做内容的年轻人凑在一起，
+        决定造一个专门生产快乐的品牌——不贩卖焦虑，只制造值得回味的现场。从第一场 40 人的天台炮节开始，
+        到今天覆盖 36 座城市的快乐网络，我们始终只做一件事：把人和人之间的连接，做得更有意思。
+      </p>
+    </div>
+    <div class="feat-grid">
+      <article class="card reveal">
+        <div class="card-ico ico-hot">🎆</div>
+        <h3>创意炮节</h3>
+        <p>每季度一场主题炮节，用声音、灯光、装置和人群互动，把普通场地变成一个会呼吸的快乐场。</p>
+        <div class="tagline">SEASONAL FESTIVAL</div>
+      </article>
+      <article class="card reveal">
+        <div class="card-ico ico-sun">🌃</div>
+        <h3>城市夜游</h3>
+        <p>跟着本地领队走街串巷，从深夜食堂到天台观景，解锁城市里那些地图不会标注的快乐坐标。</p>
+        <div class="tagline">CITY NIGHT WALK</div>
+      </article>
+      <article class="card reveal">
+        <div class="card-ico ico-mint">🤝</div>
+        <h3>社群共创</h3>
+        <p>不设门槛的兴趣小组，策划、摄影、音乐、手作……你想做的事，总有人愿意一起把它落地。</p>
+        <div class="tagline">CO-CREATION</div>
+      </article>
+      <article class="card reveal">
+        <div class="card-ico ico-violet">🎁</div>
+        <h3>快乐周边</h3>
+        <p>把现场的能量带回家：联名帆布袋、能量徽章、盲盒手办，每一件都藏着一个小彩蛋。</p>
+        <div class="tagline">HAPPY GOODS</div>
+      </article>
+      <article class="card reveal">
+        <div class="card-ico ico-sky">⚡</div>
+        <h3>主题快闪</h3>
+        <p>48 小时限时空间，和品牌、艺术家、街区一起，做一场说走就走的城市实验。</p>
+        <div class="tagline">POP-UP LAB</div>
+      </article>
+      <article class="card reveal">
+        <div class="card-ico ico-ink">🧭</div>
+        <h3>周末出逃</h3>
+        <p>两天一夜的轻旅行，山野、海边、小镇，把城市里的紧绷感交给风和旷野。</p>
+        <div class="tagline">WEEKEND ESCAPE</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- scenes -->
+<section class="sec scene" id="scenes">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">HOW IT WORKS</span>
+      <h2>从报名到散场，一场窝窝炮是怎么发生的</h2>
+      <p>我们把一场活动拆成六个可感知的瞬间，每个瞬间都有人负责、有标准、有惊喜。</p>
+    </div>
+    <div class="scene-list">
+      <div class="scene-row reveal">
+        <div class="scene-num">01</div>
+        <div class="scene-body">
+          <h4>看见 · 官宣上线</h4>
+          <p>每场活动提前 14 天在官网与社群同步官宣，含主题、时间、地点、容量与惊喜彩蛋预告。名额有限，页面实时显示余量。</p>
+          <div class="meta"><span>提前 14 天</span><span>实时余量</span><span>彩蛋预告</span></div>
+        </div>
+      </div>
+      <div class="scene-row reveal">
+        <div class="scene-num">02</div>
+        <div class="scene-body">
+          <h4>报名 · 三分钟搞定</h4>
+          <p>填写简单的兴趣标签，系统会据此为你匹配同桌伙伴和推荐玩法。报名成功后可加入专属城市群，提前认识你的搭子。</p>
+          <div class="meta"><span>兴趣匹配</span><span>城市群</span><span>电子凭证</span></div>
+        </div>
+      </div>
+      <div class="scene-row reveal">
+        <div class="scene-num">03</div>
+        <div class="scene-body">
+          <h4>入场 · 能量补给站</h4>
+          <p>签到处即体验区：领取能量手环、拍一张专属入场照、在涂鸦墙留下本周的一句心情。第一分钟就开始好玩。</p>
+          <div class="meta"><span>能量手环</span><span>入场照</span><span>涂鸦墙</span></div>
+        </div>
+      </div>
+      <div class="scene-row reveal">
+        <div class="scene-num">04</div>
+        <div class="scene-body">
+          <h4>现场 · 高浓度互动</h4>
+          <p>主舞台节奏演出、自由市集、共创工作坊、随机组队挑战四线并行。你可以全程嗨，也可以安静地坐在角落认识一个人。</p>
+          <div class="meta"><span>四线并行</span><span>随机组队</span><span>自由节奏</span></div>
+        </div>
+      </div>
+      <div class="scene-row reveal">
+        <div class="scene-num">05</div>
+        <div class="scene-body">
+          <h4>散场 · 故事继续</h4>
+          <p>现场照片三天内上云，专属相册可一键下载；活动后一周内，社群会沉淀出搭子群、兴趣组和下一次的邀请。</p>
+          <div class="meta"><span>专属相册</span><span>搭子群</span><span>复访邀请</span></div>
+        </div>
+      </div>
+      <div class="scene-row reveal">
+        <div class="scene-num">06</div>
+        <div class="scene-body">
+          <h4>沉淀 · 城市合伙人</h4>
+          <p>每座城市都有本地主理人，他们来自用户。如果你也想在你所在的城市点亮一场窝窝炮，欢迎申请成为城市合伙人。</p>
+          <div class="meta"><span>本地主理人</span><span>用户共创</span><span>长期成长</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- gallery -->
+<section class="sec" id="gallery">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">SCENE GALLERY</span>
+      <h2>现场的能量，用眼睛先感受一遍</h2>
+      <p>来自 36 座城市的真实片段——光线、人群、笑声，以及那些来不及被拍下的瞬间。</p>
+    </div>
+    <div class="gallery">
+      <div class="g-item g1 tall reveal">
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <circle cx="76" cy="22" r="30" fill="rgba(255,255,255,.18)"/>
+          <circle cx="18" cy="82" r="24" fill="rgba(255,255,255,.14)"/>
+        </svg>
+        <span>天台炮节</span>
+      </div>
+      <div class="g-item g2 wide reveal">
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0,70 Q25,40 50,68 T100,58 L100,100 L0,100 Z" fill="rgba(255,255,255,.15)"/>
+        </svg>
+        <span>城市夜游计划</span>
+      </div>
+      <div class="g-item g3 reveal">
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <rect x="60" y="10" width="30" height="30" rx="6" fill="rgba(255,255,255,.2)" transform="rotate(18 75 25)"/>
+        </svg>
+        <span>能量补给站</span>
+      </div>
+      <div class="g-item g4 reveal">
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <circle cx="30" cy="30" r="14" fill="rgba(255,255,255,.2)"/>
+        </svg>
+        <span>共创工作坊</span>
+      </div>
+      <div class="g-item g5 wide reveal">
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0,80 C20,60 40,90 60,70 C80,50 90,72 100,64 L100,100 L0,100 Z" fill="rgba(255,255,255,.16)"/>
+        </svg>
+        <span>周末出逃 · 海边场</span>
+      </div>
+      <div class="g-item g6 tall reveal">
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <circle cx="50" cy="50" r="34" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="2"/>
+          <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="2"/>
+        </svg>
+        <span>深夜食堂局</span>
+      </div>
+      <div class="g-item g7 reveal">
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <rect x="12" y="58" width="18" height="30" rx="4" fill="rgba(255,255,255,.2)"/>
+          <rect x="40" y="40" width="18" height="48" rx="4" fill="rgba(255,255,255,.16)"/>
+        </svg>
+        <span>快乐市集</span>
+      </div>
+      <div class="g-item g2 reveal">
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <circle cx="70" cy="72" r="18" fill="rgba(255,255,255,.18)"/>
+        </svg>
+        <span>城市合伙人</span>
+      </div>
+      <div class="g-item g1 wide reveal">
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0,60 Q30,20 60,55 T100,45 L100,100 L0,100 Z" fill="rgba(255,255,255,.15)"/>
+        </svg>
+        <span>年度能量大会 · 现场</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- numbers -->
+<section class="numbers sec">
+  <div class="wrap">
+    <div class="sec-head reveal" style="color:#fff">
+      <span class="kicker" style="background:rgba(255,255,255,.12);color:var(--sun)">BY THE NUMBERS</span>
+      <h2 style="color:#fff">被时间验证的快乐，值得被数据记录</h2>
+      <p style="color:rgba(255,250,242,.66)">每一个数字背后，都是一次真实的相聚、一句真诚的「下次还来」。</p>
+    </div>
+    <div class="num-grid">
+      <div class="num-cell reveal"><b>128<em>万+</em></b><span>累计参与人次</span></div>
+      <div class="num-cell reveal"><b>920<em>场</em></b><span>已举办活动数</span></div>
+      <div class="num-cell reveal"><b>36<em>座</em></b><span>覆盖城市</span></div>
+      <div class="num-cell reveal"><b>72<em>%</em></b><span>复访率</span></div>
+      <div class="num-cell reveal"><b>4.9<em>/5</em></b><span>用户综合评分</span></div>
+      <div class="num-cell reveal"><b>1.6<em>万</em></b><span>社群活跃成员</span></div>
+      <div class="num-cell reveal"><b>210<em>位</em></b><span>城市主理人</span></div>
+      <div class="num-cell reveal"><b>48<em>小时</em></b><span>快闪平均筹备周期</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- voices -->
+<section class="sec voices" id="voices">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">REAL VOICES</span>
+      <h2>他们来过，然后带来了朋友</h2>
+      <p>真实的反馈，不修饰的喜欢。以下来自社群成员的公开分享。</p>
+    </div>
+    <div class="voice-grid">
+      <div class="voice reveal">
+        <div class="quote">第一次参加是抱着「凑个热闹」的心态，结果散场后和同桌的三个人去吃了宵夜。现在我们是固定搭子，每场都约。</div>
+        <div class="who">
+          <div class="avatar" style="background:linear-gradient(135deg,#ff4d3d,#ff9f45)">林</div>
+          <div><b>林小满</b><small>上海 · 加入 2 年</small></div>
+        </div>
+      </div>
+      <div class="voice reveal">
+        <div class="quote">很喜欢这里的节奏感，嗨的部分够嗨，安静的部分也留了空间。不强迫社交，这点特别难得。</div>
+        <div class="who">
+          <div class="avatar" style="background:linear-gradient(135deg,#7357ff,#4aa8ff)">陈</div>
+          <div><b>陈一鸣</b><small>杭州 · 加入 1 年</small></div>
+        </div>
+      </div>
+      <div class="voice reveal">
+        <div class="quote">我从参与者变成了城市主理人。把喜欢的事做成一个城市的活动，看到别人因为我策划的场次开心，非常上瘾。</div>
+        <div class="who">
+          <div class="avatar" style="background:linear-gradient(135deg,#26c2a3,#4aa8ff)">周</div>
+          <div><b>周允</b><small>成都 · 城市合伙人</small></div>
+        </div>
+      </div>
+      <div class="voice reveal">
+        <div class="quote">周边做得很用心，徽章和帆布袋都在用。细节能看出这个品牌是真的在意「快乐」两个字。</div>
+        <div class="who">
+          <div class="avatar" style="background:linear-gradient(135deg,#ffc93c,#ff7a2f)">苏</div>
+          <div><b>苏悦</b><small>广州 · 加入 3 年</small></div>
+        </div>
+      </div>
+      <div class="voice reveal">
+        <div class="quote">带同事一起来团建，意外地没有尴尬。流程设计得很顺，连不太爱说话的人都玩开了。</div>
+        <div class="who">
+          <div class="avatar" style="background:linear-gradient(135deg,#13131a,#4a4a5e)">何</div>
+          <div><b>何嘉</b><small>北京 · 企业用户</small></div>
+        </div>
+      </div>
+      <div class="voice reveal">
+        <div class="quote">夜游那一场走了两万多步，但完全不觉得累。城市被重新认识了一次，这大概就是窝窝炮的魔法。</div>
+        <div class="who">
+          <div class="avatar" style="background:linear-gradient(135deg,#4aa8ff,#26c2a3)">木</div>
+          <div><b>木子</b><small>深圳 · 加入 1 年</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- join -->
+<section class="sec join" id="join">
+  <div class="wrap">
+    <div class="join-grid">
+      <div class="reveal">
+        <span class="kicker">JOIN US</span>
+        <h2>下一场窝窝炮，<br>给位置留给你</h2>
+        <p class="lead">填写信息，我们会把你加入所在城市的社群，并第一时间推送适合你的场次。不打扰，只分享好玩的事。</p>
+        <ul class="join-perks">
+          <li><span class="check">✓</span>新会员专享「快乐能量包」，含限定徽章与场次券</li>
+          <li><span class="check">✓</span>按兴趣标签精准匹配，第一时间收到合适场次</li>
+          <li><span class="check">✓</span>优先参与城市限定快闪与共创工作坊</li>
+          <li><span class="check">✓</span>社群专属福利：周边折扣、老带新双人礼</li>
+          <li><span class="check">✓</span>可申请成为城市合伙人，把快乐开到你的城市</li>
+        </ul>
+      </div>
+      <form class="join-form reveal" id="joinForm" novalidate>
+        <div class="form-row">
+          <div class="field">
+            <label for="name">你的称呼</label>
+            <input type="text" id="name" name="name" placeholder="怎么称呼你？" required>
+          </div>
+          <div class="field">
+            <label for="city">所在城市</label>
+            <input type="text" id="city" name="city" placeholder="如：杭州" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="phone">联系方式</label>
+            <input type="tel" id="phone" name="phone" placeholder="手机号或微信" required>
+          </div>
+          <div class="field">
+            <label for="interest">感兴趣的方向</label>
+            <select id="interest" name="interest">
+              <option value="festival">创意炮节</option>
+              <option value="night">城市夜游</option>
+              <option value="co">社群共创</option>
+              <option value="escape">周末出逃</option>
+              <option value="popup">主题快闪</option>
+              <option value="partner">城市合伙人</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="msg">想对我们说的话（选填）</label>
+          <textarea id="msg" name="msg" placeholder="比如：想在长沙办一场天台音乐局"></textarea>
+        </div>
+        <button type="submit" class="submit-btn">提交 · 领取快乐能量包 ⚡</button>
+        <p class="form-note">我们尊重你的隐私，信息仅用于活动通知，可随时退订。</p>
+        <div class="form-ok" id="formOk">✅ 提交成功！我们会尽快联系你，请留意来电或消息。</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- faq -->
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">FAQ</span>
+      <h2>你可能想问的几件事</h2>
+      <p>如果这里没有你要的答案，欢迎在社群里直接找主理人聊。</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">参加窝窝炮的活动需要什么条件吗？<span class="plus">+</span></button>
+        <div class="faq-a"><p>基本没有门槛。年满 18 周岁、对新鲜体验保持好奇就可以。部分深夜场或户外场会有年龄与身体条件提示，报名页面会清晰标注。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">一个人去会不会很尴尬？<span class="plus">+</span></button>
+        <div class="faq-a"><p>恰恰相反，我们超过六成参与者是独自报名的。现场有随机组队与破冰机制，工作人员也会主动照顾单独来的朋友，很多人都是一个人来、一群人走。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">报名后可以改期或退款吗？<span class="plus">+</span></button>
+        <div class="faq-a"><p>活动开始前 72 小时可免费改期一次；前 48 小时可申请全额退款；之后因物料与场地已锁定，可转让名额给朋友，或兑换等额场次券。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">可以带朋友或团队一起来吗？<span class="plus">+</span></button>
+        <div class="faq-a"><p>当然可以。3 人以上同行报名有团体优惠，10 人以上可联系我们定制专场。企业团建、品牌联名快闪也都欢迎，直接在表单里选择「城市合伙人」或留言说明即可。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">怎么申请成为城市合伙人？<span class="plus">+</span></button>
+        <div class="faq-a"><p>先以普通用户身份参加 2 场以上活动，再通过官网表单提交申请。我们会评估你所在城市的活跃度与你的策划意愿，通过后提供完整的培训、物料与运营支持。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">现场照片会被公开使用吗？<span class="plus">+</span></button>
+        <div class="faq-a"><p>我们尊重每一位参与者的肖像权。入场时会提供可佩戴的「不愿被拍摄」标识，佩戴者的照片不会被用于任何对外传播。专属相册仅对当场的参与者开放。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand" style="gap:12px">
+          <div class="brand-mark">窝</div>
+          <div class="brand-text"><b>wow窝窝炮</b><span>HAPPY ENERGY</span></div>
+        </div>
+        <p>城市快乐能量站。我们相信，好的相聚能让人重新充满电。36 座城市，等你也来点亮一场。</p>
+        <div class="foot-social">
+          <a href="#" aria-label="微博">微</a>
+          <a href="#" aria-label="小红书">书</a>
+          <a href="#" aria-label="抖音">抖</a>
+          <a href="#" aria-label="公众号">公</a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h5>探索</h5>
+        <ul>
+          <li><a href="#about">品牌故事</a></li>
+          <li><a href="#features">核心玩法</a></li>
+          <li><a href="#scenes">活动场景</a></li>
+          <li><a href="#gallery">现场图集</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>参与</h5>
+        <ul>
+          <li><a href="#join">报名活动</a></li>
+          <li><a href="#join">成为合伙人</a></li>
+          <li><a href="#voices">用户声音</a></li>
+          <li><a href="#faq">常见问题</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>联系</h5>
+        <ul>
+          <li><a href="#join">商务合作</a></li>
+          <li><a href="#join">媒体采访</a></li>
+          <li><a href="#join">加入我们</a></li>
+          <li><a href="#top">返回顶部</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2025 wow窝窝炮 · 保留所有权利</span>
+    <span>让每一次相聚，都炸裂出惊喜</span>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" aria-label="返回顶部">↑</button>
+
+<script>
+(function(){
+  "use strict";
+
+  // header scroll
+  var head = document.getElementById('siteHead');
+  var backTop = document.getElementById('backTop');
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY || document.documentElement.scrollTop;
+    if(head) head.classList.toggle('scrolled', y > 12);
+    if(backTop) backTop.classList.toggle('show', y > 480);
+  }, {passive:true});
+
+  if(backTop){
+    backTop.addEventListener('click', function(){
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  }
+
+  // mobile nav
+  var burger = document.getElementById('burger');
+  var nav = document.getElementById('mainNav');
+  if(burger && nav){
+    burger.addEventListener('click', function(){
+      var open = nav.classList.toggle('open');
+      burger.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    nav.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        nav.classList.remove('open');
+        burger.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+
+  // reveal on scroll
+  var reveals = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          en.target.classList.add('in');
+          io.unobserve(en.target);
+        }
+      });
+    }, {threshold:.14, rootMargin:'0px 0px -40px 0px'});
+    reveals.forEach(function(el){ io.observe(el); });
+  } else {
+    reveals.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  // faq accordion
+  var faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(function(item){
+    var q = item.querySelector('.faq-q');
+    var a = item.querySelector('.faq-a');
+    if(!q || !a) return;
+    q.addEventListener('click', function(){
+      var isOpen = item.classList.contains('open');
+      faqItems.forEach(function(other){
+        other.classList.remove('open');
+        var oa = other.querySelector('.faq-a');
+        if(oa) oa.style.maxHeight = null;
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        a.style.maxHeight = a.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // form submit
+  var form = document.getElementById('joinForm');
+  var ok = document.getElementById('formOk');
+  if(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var name = form.querySelector('#name');
+      var city = form.querySelector('#city');
+      var phone = form.querySelector('#phone');
+      var valid = true;
+      [name, city, phone].forEach(function(f){
+        if(!f) return;
+        if(!f.value.trim()){
+          f.style.borderColor = '#e42f1f';
+          valid = false;
+        } else {
+          f.style.borderColor = '';
+        }
+      });
+      if(!valid){
+        if(ok){
+          ok.classList.remove('show');
+        }
+        return;
+      }
+      if(ok){
+        ok.classList.add('show');
+      }
+      form.querySelectorAll('input, textarea, select').forEach(function(f){
+        if(f.tagName !== 'SELECT') f.value = '';
+      });
+      setTimeout(function(){
+        if(ok) ok.classList.remove('show');
+      }, 6000);
+    });
+  }
+
+  // gallery subtle parallax on hover (pointer devices only)
+  if(window.matchMedia('(hover:hover)').matches){
+    document.querySelectorAll('.g-item').forEach(function(card){
+      card.addEventListener('mousemove', function(e){
+        var r = card.getBoundingClientRect();
+        var x = (e.clientX - r.left) / r.width - .5;
+        var y = (e.clientY - r.top) / r.height - .5;
+        card.style.transform = 'scale(.97) rotateX(' + (-y*4) + 'deg) rotateY(' + (x*4) + 'deg)';
+      });
+      card.addEventListener('mouseleave', function(){
+        card.style.transform = '';
+      });
+    });
+  }
+
+  // smooth anchor fallback
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href');
+      if(id.length > 1){
+        var target = document.querySelector(id);
+        if(target){
+          e.preventDefault();
+          var offset = 82;
+          var top = target.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({top:top, behavior:'smooth'});
+        }
+      }
+    });
+  });
+
+})();
+</script>
+</body>
+        </html>
